@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
-    "prettify": "prettier --write ."
+    "prettify": "prettier --write .",
+    "deploy": "ng deploy --base-href=/anguylar-shiki-magic-move/"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "@angular/compiler-cli": "^17.3.0",
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "7.2.0",
+    "angular-cli-ghpages": "^2.0.0-beta.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
