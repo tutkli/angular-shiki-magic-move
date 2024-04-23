@@ -43,17 +43,10 @@
             "outputPath": "dist/angular-shiki-magic-move",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -97,8 +90,18 @@
           "options": {
             "buildTarget": "angular-shiki-magic-move:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "800206e5-96d8-4d0a-8c0f-831d68530b01",
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }
