@@ -1,17 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core'
+import { PlaygroundComponent } from './playground.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [PlaygroundComponent],
   template: `
-    <h1>Welcome to {{ title }}!</h1>
-
-    <router-outlet />
+    <app-playground />
   `,
-  styles: [],
 })
-export class AppComponent {
-  title = 'angular-shiki-magic-move';
-}
+export class AppComponent {}

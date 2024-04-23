@@ -1,3 +1,25 @@
+@import "assets/shiki-magic-move.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    background: #020202;
+    color: #ccc;
+  }
+}
+
+.magic-move-debug-style .shiki-magic-move-move {
+  background: #8883;
+}
+.magic-move-debug-style .shiki-magic-move-enter-active {
+  background: rgba(92, 183, 47, 0.3);
+}
+.magic-move-debug-style .shiki-magic-move-leave-active {
+  background: rgba(183, 47, 47, 0.533);
+}
