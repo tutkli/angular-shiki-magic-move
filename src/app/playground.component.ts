@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common'
 import { Component, computed, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { computedAsync } from 'ngxtension/computed-async'
-import { getHighlighter } from 'shiki'
+import { bundledLanguagesInfo, getHighlighter } from 'shiki'
 import { bundledThemesInfo } from 'shiki/themes'
 import { angularAfter, angularBefore } from './constants/snippets'
 import { ShikiMagicMoveComponent } from './shiki-magic-move/shiki-magic-move.component'
@@ -118,6 +118,13 @@ const defaultOptions = {
                 <option [value]="t.id">{{ t.displayName }}</option>
               }
             </select>
+            <select
+              [(ngModel)]="lang"
+              class="rounded border border-stone-200 px-2 py-1 text-sm">
+              @for (l of bundledLanguagesInfo; track l.id) {
+                <option [value]="l.id">{{ l.name }}</option>
+              }
+            </select>
           </div>
           @if (highlighter(); as highlighter) {
             <shiki-magic-move
@@ -145,7 +152,7 @@ export class PlaygroundComponent {
   highlighter = computedAsync(() => {
     return getHighlighter({
       themes: bundledThemesInfo.map(t => t.id),
-      langs: [this.lang()],
+      langs: bundledLanguagesInfo.map(l => l.id),
     })
   })
 
@@ -172,4 +179,5 @@ export class PlaygroundComponent {
   }
 
   protected readonly bundledThemesInfo = bundledThemesInfo
+  protected readonly bundledLanguagesInfo = bundledLanguagesInfo
 }
